@@ -1,149 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SUPERHERO ICE CREAM</title>
-<link rel="icon" href="https://www.cap10k.com/wp-content/uploads/2023/05/Google_Ice_Cream_Tour_Favicon_White_500x500_23.png" type="image/x-icon">
-<style>
-body {
-font-family: 'Comic Sans MS', cursive;
-background: #ffebf3;
-color: #333;
-margin: 0;
-line-height: 1.6;
-}
-
-.banner {
-background: linear-gradient(45deg, #ff4d79, #ff9500);
-height: 200px;
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
-text-align: center;
-border-bottom: 3px solid #00a8ff;
-}
-
-nav {
-background: #00a8ff;
-padding: 1rem;
-display: flex;
-justify-content: space-around;
-}
-
-nav a {
-color: #fff;
-text-decoration: none;
-transition: 0.3s;
-font-weight: bold;
-}
-
-nav a:hover {
-color: #ffeb3b;
-}
-
-.card {
-background: #fff;
-width: 80%;
-margin: 2rem auto;
-padding: 1.5rem;
-border-left: 3px solid #00a8ff;
-box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-}
-
-button {
-background: #ff4d79;
-color: white;
-border: none;
-padding: 0.5rem 1rem;
-cursor: pointer;
-margin-top: 1rem;
-border-radius: 20px;
-}
-
-button:hover {
-background: #ff0062;
-}
-
-footer {
-text-align: center;
-padding: 2rem;
-border-top: 1px solid #ccc;
-background: #00a8ff;
-color: white;
-}
-
-#flavors, #contact { display: none; }
-
-.icecream-img {
-max-width: 100%;
-width: 500px;
-height: auto;
-display: block;
-margin: 1rem auto;
-border-radius: 10px;
-object-fit: cover;
-}
-</style>
+<meta charset="UTF-8">
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="latqr" rel="icon">
 </head>
-<body>
-<header class="banner">
-<h1>SUPERHERO ICE CREAM</h1>
-<p>Powerful flavors for heroic appetites!</p>
+<body class="leading-relaxed font-['comic_sans_ms'] bg-[#ffebf3] m-0 text-[#333]">
+
+<header class="border-b-4 h-[200px] flex flex-col bg-gradient-to-r from-[#ff4d79] to-[#ff9500] justify-center border-[#00a8ff] items-center text-center">
+<h1 class="text-4xl font-bold">SUPERHERO ICE CREAM</h1>
+<p class="text-xl">Powerful flavors for heroic appetites!</p>
 </header>
 
-<nav>
-<a href="#" onclick="show('home')">HOME</a>
-<a href="#" onclick="show('flavors')">FLAVORS</a>
-<a href="#" onclick="show('contact')">CONTACT</a>
-<a href="404.html">404 TEST</a>
+<nav class="p-4 bg-[#00a8ff] justify-around flex">
+<a class="hover:text-[#ffeb3b] text-white transition font-bold" href="#" onclick="show('home')">HOME</a>
+<a class="hover:text-[#ffeb3b] transition font-bold text-white" href="#" onclick="show('flavors')">FLAVORS</a>
+<a onclick="show('locations')" class="font-bold text-white hover:text-[#ffeb3b] transition" href="#">LOCATIONS</a>
+<a href="#" class="hover:text-[#ffeb3b] font-bold transition text-white" onclick="show('about')">ABOUT</a>
+<a class="hover:text-[#ffeb3b] transition font-bold text-white" href="#" onclick="show('contact')">CONTACT</a>
+<a onclick="show('not-found')" href="#" class="hover:text-[#ffeb3b] text-white font-bold transition">404 TEST</a>
 </nav>
 
-<div id="home">
-<div class="card">
-<h3>HERO OF THE WEEK</h3>
-<p>Try our limited edition "Captain Caramel Crunch" - with real pieces of crunchy hero cookies!</p>
-<img src="https://i.ytimg.com/vi/6ri5b0TgkQw/maxresdefault.jpg" alt="Superhero Ice Cream Special" class="icecream-img">
-<button>ORDER NOW</button>
-</div>
-</div>
-
-<div id="flavors">
-<div class="card">
-<h3>SUPER FLAVORS</h3>
-<ul>
-<li>Iron Mint Chocolate Chip</li>
-<li>Hulk Smash Pistachio</li>
-<li>Wonder Woman Raspberry Ripple</li>
-<li>Flash Vanilla Lightning</li>
-<li>Black Widow Dark Chocolate</li>
+<div id="flavors" class="hidden">
+<div class="p-6 shadow-md w-[80%] mx-auto border-l-4 my-8 bg-white border-[#00a8ff]">
+<h3 class="text-2xl font-bold">SUPER FLAVORS</h3>
+<ul class="pl-5 list-disc">
+<li>Iron mint chocolate chip</li>
+<li>Hulk smash pistachio</li>
+<li>Wonder woman raspberry ripple</li>
+<li>Flash vanilla lightning</li>
+<li>Black widow dark chocolate</li>
 </ul>
-<button>SEE ALL FLAVORS</button>
+<button class="rounded-full text-white hover:bg-[#ff0062] bg-[#ff4d79] px-4 mt-4 py-2">SEE ALL FLAVORS</button>
 </div>
 </div>
 
-<div id="contact">
-<div class="card">
-<h3>SAVE THE CITY (WITH ICE CREAM)</h3>
-<p>Want to host a superhero ice cream party? Contact us!</p>
-<input type="text" placeholder="Your hero name" style="width:100%;padding:8px;margin:5px 0;background:#f5f5f5;color:#333;border:1px solid #ddd;">
-<input type="email" placeholder="Email" style="width:100%;padding:8px;margin:5px 0;background:#f5f5f5;color:#333;border:1px solid #ddd;">
-<button>SEND MESSAGE</button>
+<div id="home" class="block">
+<div class="shadow-md my-8 w-[80%] mx-auto border-l-4 p-6 bg-white border-[#00a8ff]">
+<h3 class="text-2xl font-bold">HERO OF THE WEEK</h3>
+<p class="my-2">yo try that captain caramel crunch shit , got like real cookie chunks in it, goes hard fr</p>
+<img class="max-w-full w-[500px] rounded-lg block object-cover my-4 h-auto mx-auto" src="https://i.ytimg.com/vi/6ri5b0TgkQw/maxresdefault.jpg" alt="Superhero ice cream special">
+<button class="rounded-full mt-4 hover:bg-[#ff0062] bg-[#ff4d79] text-white px-4 py-2">ORDER NOW</button>
 </div>
 </div>
 
-<footer>
-<p>© 2025 SUPERHERO ICE CREAM - For Hack Club Swirl</p>
+<div id="locations" class="hidden">
+<div class="p-6 shadow-md border-l-4 w-[80%] my-8 bg-white mx-auto border-[#00a8ff]">
+<h3 class="text-2xl font-bold">OUR HEROIC LOCATIONS</h3>
+<p class="my-2">find us in these cities:</p>
+<ul class="pl-5 list-disc">
+<li>Metropolis - daily 6Am-9Pm</li>
+<li>Gotham city - daily 10Am-11Pm</li>
+<li>Wakanda - weekends only</li>
+</ul>
+<img class="rounded-lg block my-4 max-w-full h-auto border-2 border-[#00a8ff] mx-auto" alt="Our locations map" src="https://media.istockphoto.com/id/1308342065/vector/folded-location-map-with-marker-city-map-with-pin-pointer-gps-navigation-map-with-city.jpg?s=612x612&w=0&k=20&c=E9DP4dIwSdwaveNwcYU2LzBeKuBoKLa7nsTxTWDHObw=">
+</div>
+</div>
+
+<div id="contact" class="hidden">
+<div class="my-8 p-6 shadow-md w-[80%] border-l-4 bg-white mx-auto border-[#00a8ff]">
+<h3 class="text-2xl font-bold">SAVE THE CITY (WITH ICE CREAM)</h3>
+<p class="my-2">Want to host a superhero ice cream party? contact us!</p>
+<input class="w-full border-[#ddd] bg-[#f5f5f5] my-1 text-[#333] border p-2 rounded" type="text" placeholder="Your hero name">
+<input type="email" placeholder="Email" class="w-full p-2 border my-1 rounded text-[#333] bg-[#f5f5f5] border-[#ddd]">
+<button class="rounded-full hover:bg-[#ff0062] py-2 px-4 bg-[#ff4d79] mt-4 text-white">SEND MESSAGE</button>
+</div>
+</div>
+
+<div id="about" class="hidden">
+<div class="p-6 shadow-md border-l-4 w-[80%] bg-white mx-auto my-8 border-[#00a8ff]">
+<h3 class="font-bold text-2xl">OUR SUPER STORY</h3>
+<p class="my-2">founded in 2025 by some ice cream freak heroes, we just mix wild-ass flavors with stuff that hits like superpowers</p>
+<p class="my-2">Every scoop supports local hero training programs</p>
+<button class="bg-[#ff4d79] mt-4 hover:bg-[#ff0062] py-2 px-4 rounded-full text-white">MEET THE TEAM</button>
+</div>
+</div>
+
+<div id="not-found" class="hidden text-[#777] items-center flex bg-black flex-col justify-center h-screen">
+<h2 class="m-0 text-[#ccc] text-[2rem]">404</h2>
+<p>Page not found</p>
+<button onclick="show('home')" class="mt-4 px-4 bg-[#333] py-2 text-[#ccc] rounded-full">GO BACK</button>
+</div>
+
+<footer class="p-8 bg-[#00a8ff] text-white border-t text-center border-[#ccc]">
+<p>SUPERHERO ICE CREAM For Hack Club Swirl</p>
 </footer>
 
-<script>
-function show(page) {
-document.getElementById('home').style.display = 'none';
-document.getElementById('flavors').style.display = 'none';
-document.getElementById('contact').style.display = 'none';
-document.getElementById(page).style.display = 'block';
-}
-</script>
+<script src="script.js"></script>
 </body>
 </html>
